@@ -1,0 +1,28 @@
+name: mlb-analytics-postgres
+
+services:
+  mlb-postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: mdrinne
+      POSTGRES_PASSWORD: catchmeifyoucan
+      POSTGRES_DB: mlb
+    volumes:
+      - mlb-postgres-db-volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "mdrinne"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+    networks:
+      - mlb_analytics_network
+
+volumes:
+  mlb-postgres-db-volume:
+
+networks:
+  mlb_analytics_network:
+    name: mlb_analytics_network
