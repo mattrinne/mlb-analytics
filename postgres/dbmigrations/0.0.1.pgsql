@@ -47,3 +47,17 @@ CREATE TABLE IF NOT EXISTS metadata.teams (
     location VARCHAR(30),
     active BOOLEAN
 );
+
+CREATE TABLE IF NOT EXISTS metadata.positions (
+    code VARCHAR(5) PRIMARY KEY,
+    short_name VARCHAR(25),
+    full_name VARCHAR(25),
+    abbreviation VARCHAR(5),
+    type VARCHAR(25),
+    formal_name VARCHAR(30),
+    display_name VARCHAR(30),
+    game_position BOOLEAN,
+    pitcher BOOLEAN,
+    fielder BOOLEAN,
+    outfield BOOLEAN
+);
