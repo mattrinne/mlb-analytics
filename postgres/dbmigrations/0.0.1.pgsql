@@ -61,3 +61,19 @@ CREATE TABLE IF NOT EXISTS metadata.positions (
     fielder BOOLEAN,
     outfield BOOLEAN
 );
+
+CREATE TABLE IF NOT EXISTS metadata.event_types (
+	code varchar(30) PRIMARY KEY,
+	plate_appearance bool NULL,
+	hit bool NULL,
+	base_running_event bool NULL,
+	description varchar(60) NULL,
+);
+
+CREATE TABLE IF NOT EXISTS metadata.game_statuses (
+    status_code VARCHAR(5) PRIMARY KEY,
+    abstract_game_state VARCHAR(20),
+    coded_game_state VARCHAR(5),
+    detailed_state VARCHAR(45),
+    abstract_game_code VARCHAR(5)
+);

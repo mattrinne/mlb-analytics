@@ -15,7 +15,7 @@ log = logging.getLogger(__name__)
     start_date=pendulum.datetime(2025, 3, 18),
     schedule=None,
     catchup=False,
-    tags=['ingest', 'metadata']
+    tags=['ingest', 'metadata', 'deletable']
 )
 
 def ingest_mlb_event_types():
