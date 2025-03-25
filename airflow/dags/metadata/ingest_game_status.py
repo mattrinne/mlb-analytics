@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 
 @dag(
     'ingest_mlb_game_status',
-    description='Get the latest position data from the mlb "positions" endpoint',
+    description='Get the latest position data from the mlb "gameStatus" endpoint',
     start_date=pendulum.datetime(2025, 3, 18),
     schedule=None,
     catchup=False,

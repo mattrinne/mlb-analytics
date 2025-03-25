@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS metadata.event_types (
 	plate_appearance bool NULL,
 	hit bool NULL,
 	base_running_event bool NULL,
-	description varchar(60) NULL,
+	description varchar(60) NULL
 );
 
 CREATE TABLE IF NOT EXISTS metadata.game_statuses (
@@ -76,4 +76,16 @@ CREATE TABLE IF NOT EXISTS metadata.game_statuses (
     coded_game_state VARCHAR(5),
     detailed_state VARCHAR(45),
     abstract_game_code VARCHAR(5)
+);
+
+CREATE TABLE IF NOT EXISTS metadata.game_types (
+    id VARCHAR(1) PRIMARY KEY,
+    description VARCHAR(30)
+);
+
+CREATE TABLE IF NOT EXISTS metadata.metrics (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(40),
+    grouping VARCHAR(30),
+    unit VARCHAR(6)
 );
