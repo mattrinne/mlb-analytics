@@ -89,3 +89,21 @@ CREATE TABLE IF NOT EXISTS metadata.metrics (
     grouping VARCHAR(30),
     unit VARCHAR(6)
 );
+
+CREATE TABLE IF NOT EXISTS metadata.pitch_codes (
+    code VARCHAR(5) PRIMARY KEY,
+    description VARCHAR(60),
+    swing_status BOOLEAN,
+    swing_miss_status BOOLEAN,
+    swing_contact_status BOOLEAN,
+    sort_order INTEGER,
+    strike_status BOOLEAN,
+    ball_status BOOLEAN,
+    pitch_status BOOLEAN,
+    pitch_result_text VARCHAR(40)
+);
+
+CREATE TABLE IF NOT EXISTS metadata.pitch_types (
+    code VARCHAR(3) PRIMARY KEY,
+    description VARCHAR(30)
+);
